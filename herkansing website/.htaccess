@@ -1,0 +1,13 @@
+# .htaccess
+RewriteEngine On
+
+# Standaard homepage
+DirectoryIndex index.php
+
+# 404-omleiding
+ErrorDocument 404 /404.php
+
+# SEO-vriendelijke URL's
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php?/$1 [L]
